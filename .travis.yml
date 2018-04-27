@@ -5,6 +5,7 @@ script:
   - cd ./serverless-api-automated-test/
   - npm install
   - npm install -g serverless
+  - npm test
   - serverless deploy --region eu-central-1 --verbose
 branches:
   only:
