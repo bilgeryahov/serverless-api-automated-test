@@ -1,5 +1,5 @@
 {
-  "name": "serverless_api_automated_test",
+  "name": "serverless-api-automated-test",
   "version": "1.0.0",
   "main": "handler.js",
   "scripts": {

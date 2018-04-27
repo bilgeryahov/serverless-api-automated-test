@@ -1,4 +1,4 @@
-service: serverless_api_automated_test
+service: serverless-api-automated-test
 
 provider:
   name: aws
@@ -7,7 +7,7 @@ provider:
 functions:
   hello:
     handler: handler.hello
-    name: serverless_api_automated_test-hello
+    name: serverless-api-automated-test-hello
     events:
       - http:
           method: get
@@ -19,7 +19,7 @@ functions:
           cors: true
   cheers:
     handler: handler.cheers
-    name: serverless_api_automated_test-cheers
+    name: serverless-api-automated-test-cheers
     events:
      - http:
          method: delete
