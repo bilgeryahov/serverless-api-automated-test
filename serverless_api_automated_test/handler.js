@@ -1,16 +1,19 @@
 'use strict';
 
+const handlerImplementations = require('./handlerImplementations');
+
 module.exports.hello = (event, context, callback) => {
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
-  };
+	if (event.httpMehod === 'GET') {
+		return handlerImplementations.helloGET(event, context, callback);
+	} else if (event.httpMehod === 'POST') {
+		return handlerImplementations.helloPOST(event, context, callback);
+	}
+};
 
-  callback(null, response);
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
+module.exports.cheers = (event, context, callback) => {
+	if (event.httpMehod === 'PUT') {
+		return handlerImplementations.cheersPUT(event, context, callback);
+	} else if (event.httpMehod === 'DELETE') {
+		return handlerImplementations.cheersDELETE(event, context, callback);
+	}
 };
